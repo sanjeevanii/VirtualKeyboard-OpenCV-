@@ -59,9 +59,9 @@ while True:
                     cv2.circle(img, (cx, cy), 10, (0, 255, 0), cv2.FILLED)
 
             #Check if finger is "clicking" (index and middle tips close)
-            if lm_list:
-                ix, iy = lm_list[7][1:]  #Index tip
-                mx, my = lm_list[4][1:]  #thumb tip
+            if len(lm_list) >= 13:
+                ix, iy = lm_list[8][1:]  # Index fingertip
+                mx, my = lm_list[4][1:]  # Thumb tip
                 dist = hypot(ix - mx, iy - my)
 
                 #Draw a circle when "click" gesture detected
@@ -93,5 +93,4 @@ while True:
         break
 
 cap.release()
-cv2.destroyAllWindow
-shreysanjevanixoxo
+cv2.destroyAllWindows()
